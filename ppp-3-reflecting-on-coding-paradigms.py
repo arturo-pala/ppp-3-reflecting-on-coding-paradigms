@@ -103,13 +103,30 @@ class AnakinsPod(Podracer):
         self.max_speed = self.max_speed*2
 
 class SebulbasPod(Podracer):
-    def __init__(max_speed,condition,price):
+    def __init__(self,max_speed,condition,price):
         super().__init__(max_speed,condition,price)
 
     def flame_jet(self,other):
         other.condition = 'Trashed'
     
-    
+pod_1 = Podracer(20,'Trashed', 2000)
+print(pod_1.condition)
+
+pod_1.repair()
+print(pod_1.condition)
+
+pod_2 = AnakinsPod(2,'Perfect', 4000)
+print(pod_2.max_speed)
+
+pod_2.boost()
+print(pod_2.max_speed)
+
+pod_3 = SebulbasPod(2, 'Perfect', 4000)
+
+print(pod_1.condition)
+pod_3.flame_jet(pod_1)
+print(pod_1.condition)
+
     
     
     # Once an Object Oriented solution has been implemented, answer the following questions:
